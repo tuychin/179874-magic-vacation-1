@@ -5,6 +5,7 @@
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+      transition: opacity 0.5s;
     }
   }
 }
@@ -17,6 +18,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color 0.5s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +37,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width 0.5s, height 0.5s, background-color 0.5s, border-color 0.5s;
   }
 
   svg {
@@ -47,36 +50,59 @@
   &:hover,
   .social-block--active & {
     color: $c-purple;
+    transition: color 0.5s;
 
     &::before {
       width: 112.5%;
       height: 112.5%;
+      transition: all 0.5s;
     }
   }
 
   &:focus {
     color: $c-purple;
     outline: none;
+    transition: color 0.5s;
 
     &::before {
       border-color: $c-purple;
+      transition: border-color 0.5s;
     }
 
     & + .social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      .social-block__link {
+        opacity: 1;
+        transform: translateY(-5px);
+  
+        &--fb {
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+  
+        &--insta {
+          transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+        }
+  
+        &--vk {
+          transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+        }
+      }
     }
   }
 
   &:active,
   &:active:focus {
     color: $c-light;
+    transition: color 0.5s;
 
     &::before {
       width: 100%;
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
+      transition: all 0.2s;
     }
   }
 }
@@ -89,6 +115,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.5s;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -140,6 +167,23 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+
+    .social-block__link {
+      opacity: 1;
+      transform: translateY(-5px);
+
+      &--fb {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      &--insta {
+        transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+      }
+
+      &--vk {
+        transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+      }
+    }
   }
 
   li {
@@ -168,6 +212,9 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: color 0.5s, opacity 0.5s, transform 0.5s;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -186,6 +233,7 @@
 
   &:hover {
     color: $c-purple;
+    transition: color 0.5s;
   }
 
   &:focus {
@@ -193,6 +241,7 @@
     background-color: $c-light;
     border-color: $c-purple;
     outline: none;
+    transition: all 0.5s;
   }
 
   &:active,
@@ -200,6 +249,7 @@
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+    transition: all 0.5s;
   }
 
   svg {
