@@ -60,13 +60,14 @@
   }
 
   &:focus {
-    color: $c-purple;
+    color: $c-light;
     outline: none;
     transition: color 0.5s;
 
     &::before {
+      background-color: $c-purple;
       border-color: $c-purple;
-      transition: border-color 0.5s;
+      transition: all 0.5s;
     }
 
     & + .social-block__list {
@@ -78,15 +79,15 @@
         transform: translateY(-5px);
   
         &--fb {
-          transition: opacity 0.5s ease, transform 0.5s ease;
+          transition: all 0.5s ease;
         }
   
         &--insta {
-          transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+          transition: all 0.5s ease 0.1s;
         }
   
         &--vk {
-          transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+          transition: all 0.5s ease 0.2s;
         }
       }
     }
@@ -103,6 +104,28 @@
       background-color: $c-purple;
       border-color: $c-purple;
       transition: all 0.2s;
+    }
+  }
+}
+
+.social-block--active {
+  opacity: 1;
+  pointer-events: auto;
+
+  .social-block__link {
+    opacity: 1;
+    transform: translateY(-5px);
+
+    &--fb {
+      transition: all 0.5s ease;
+    }
+
+    &--insta {
+      transition: all 0.5s ease 0.1s;
+    }
+
+    &--vk {
+      transition: all 0.5s ease 0.2s;
     }
   }
 }
@@ -162,27 +185,12 @@
   &:focus-within {
     opacity: 1;
     pointer-events: auto;
-  }
-
-  .social-block--active & {
-    opacity: 1;
-    pointer-events: auto;
+    transition: opacity 0.5s;
 
     .social-block__link {
       opacity: 1;
+      pointer-events: auto;
       transform: translateY(-5px);
-
-      &--fb {
-        transition: opacity 0.5s ease, transform 0.5s ease;
-      }
-
-      &--insta {
-        transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
-      }
-
-      &--vk {
-        transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
-      }
     }
   }
 
