@@ -98,7 +98,7 @@
   line-height: 2rem;
   opacity: 0;
   transform: translatex(30px);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 0.5s, transform 0.5s;
 
   body.loaded & {
     opacity: 1;
@@ -106,7 +106,8 @@
   }
 
   .slider__item:nth-child(2n) & {
-    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    transition-property: opacity, transform;
+    transition-delay: 0.3s;
   }
 
   @media (min-width: $stop-scaling) {
