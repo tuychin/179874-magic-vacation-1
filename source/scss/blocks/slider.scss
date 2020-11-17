@@ -96,6 +96,18 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translatex(30px);
+  transition: opacity 1s, transform 1s;
+
+  body.loaded & {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  .slider__item:nth-child(2n) & {
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
