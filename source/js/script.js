@@ -23,6 +23,6 @@ const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
 // For on load transition
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
+window.addEventListener(`load`, () => {
+  document.body.classList.add(`loaded`);
 });
