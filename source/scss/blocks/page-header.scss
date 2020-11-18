@@ -248,7 +248,8 @@
       height: 2px;
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: auto;
+      right: 0;
       background-color: $c-light;
       transition: width 0.3s, background-color 0.3s;
 
@@ -280,6 +281,8 @@
 
       &::after {
         width: 100%;
+        left: 0;
+        right: auto;
         background-color: $c-purple;
         transition: width 0.3s, background-color 0.3s;
       }
