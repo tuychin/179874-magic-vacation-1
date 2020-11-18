@@ -96,6 +96,20 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translatex(30px);
+  transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+
+  body.loaded .active .swiper-slide-active &,
+  body.loaded .active .swiper-slide-active + .swiper-slide & {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  .slider__item:nth-child(2n) & {
+    transition-property: opacity, transform;
+    transition-delay: 0.8s;
+  }
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
