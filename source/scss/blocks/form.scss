@@ -32,8 +32,8 @@
 
 .form__field {
   margin-right: 3rem;
-  padding: 0 5.6rem;
-  height: 6rem;
+  padding: 0;
+  height: 0;
   width: 0;
   text-transform: uppercase;
   font: inherit;
@@ -43,10 +43,12 @@
   border: 0;
   border-radius: 3rem;
   outline: none;
-  transition: width 0.5s;
+  transition: width 0.5s ease 0.1s, height 0.5s, padding 0.5s ease 0.5s;
 
-  body.loaded & {
+  body.loaded .active & {
     width: calc(100% - 21rem);
+    height: 6rem;
+    padding: 0 5.6rem;
   }
 
   &:focus {
@@ -61,7 +63,7 @@
     font-size: 24px;
     border-radius: 30px;
 
-    body.loaded & {
+    body.loaded .active & {
       width: calc(100% - 210px);
     }
   }
@@ -73,7 +75,7 @@
     height: 4rem;
     font-size: 1.6rem;
 
-    body.loaded & {
+    body.loaded .active & {
       width: calc(100% - 5rem);
     }
   }
@@ -81,7 +83,7 @@
   @media (max-width: $tablet) and (orientation: landscape) {
     width: 0;
 
-    body.loaded & {
+    body.loaded .active & {
       width: calc(100% - 9rem);
     }
   }
@@ -93,7 +95,7 @@
     height: 4rem;
     font-size: 1.6rem;
 
-    body.loaded & {
+    body.loaded .active & {
       width: calc(100% - 5rem);
     }
   }

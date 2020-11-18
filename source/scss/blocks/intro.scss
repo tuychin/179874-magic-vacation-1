@@ -97,7 +97,7 @@
   transform: translateY(30px);
   transition: opacity 1s, transform 0.5s;
 
-  body.loaded & {
+  body.loaded .active & {
     opacity: 1;
     transform: translateY(0px);
   }

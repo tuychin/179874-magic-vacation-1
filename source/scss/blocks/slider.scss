@@ -100,7 +100,7 @@
   transform: translatex(30px);
   transition: opacity 0.5s, transform 0.5s;
 
-  body.loaded & {
+  body.loaded .active & {
     opacity: 1;
     transform: translateX(0px);
   }
