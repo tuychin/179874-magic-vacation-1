@@ -41,17 +41,13 @@ export default class FullPageScroll {
 
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
-      const isCurrentScreen = location.hash.slice(1) === screen.id;
-
-      if (!isCurrentScreen) {
-        screen.classList.add(`screen--hidden`);
-        screen.classList.remove(`active`);
-      }
+      screen.classList.add(`screen--hidden`);
+      screen.classList.remove(`active`);
     });
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 100);
+    }, 1);
   }
 
   changeActiveMenuItem() {
