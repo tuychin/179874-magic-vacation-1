@@ -36,6 +36,13 @@
   left: 0;
   right: 0;
   z-index: 1;
+  transform: translateY(50px);
+  transition: transform 0.5s;
+  transition-timing-function: cubic-bezier(0.41, 1.13, 0.9, 0.99);
+
+  body.loaded & {
+    transform: translateY(0px);
+  }
 }
 
 .screen__footer {
@@ -46,6 +53,13 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  transform: translateY(50px);
+  transition: transform 0.5s;
+  transition-timing-function: cubic-bezier(0.41, 1.13, 0.9, 0.99);
+
+  body.loaded & {
+    transform: translateY(0px);
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
