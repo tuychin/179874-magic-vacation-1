@@ -22,16 +22,16 @@ export default (node, delay = 0, interval = 0.05) => {
       * interval
       * (wordIdx / nodeWords.length);
 
-    letters.reduce((wordWrapper, letter, letterIdx) => {
+    letters.reduce((wrapper, letter, letterIdx) => {
       const letterWrapper = document.createElement(`span`);
 
       letterWrapper.classList.add(`letter`);
       letterWrapper.textContent = letter;
       letterWrapper.style.animationDelay = wordInterval + lettersOrder[letterIdx] * interval + `s`;
 
-      wordWrapper.appendChild(letterWrapper);
+      wrapper.appendChild(letterWrapper);
 
-      return wordWrapper;
+      return wrapper;
     }, wordWrapper);
 
     wordWrapper.classList.add(`word`);
@@ -42,4 +42,4 @@ export default (node, delay = 0, interval = 0.05) => {
 
   node.innerHTML = ``;
   node.appendChild(animatedText);
-}
+};
