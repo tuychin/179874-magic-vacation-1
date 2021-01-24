@@ -203,16 +203,6 @@ img {
 }
 
 // js-animate-letters
-@keyframes slide-letters-up {
-  from {
-    transform: translateY(1.2em);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
 .js-animate-letters .word {
   display: inline-flex;
   flex-wrap: nowrap;
@@ -228,5 +218,15 @@ img {
   .active & .letter {
     animation: slide-letters-up 0.5s cubic-bezier(0.5, 1, 0.89, 1) both;
     will-change: transform;
+
+    @keyframes slide-letters-up {
+      from {
+        transform: translateY(1.2em);
+      }
+    
+      to {
+        transform: translateY(0);
+      }
+    }
   }
 }
