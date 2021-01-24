@@ -32,8 +32,8 @@ window.addEventListener(`load`, () => {
 });
 
 // animate titles letters
-const animationElements = document.querySelectorAll(`.js-animate-letters`);
-const introDateElem = document.querySelector(`.intro__info .js-animate-letters`);
+const animationNodes = document.querySelectorAll(`.js-animate-letters`);
+const introDateNode = document.querySelector(`.intro__info .js-animate-letters`);
 
-animationElements.forEach((elem) => animateLetters(elem, 0.5));
-animateLetters(introDateElem, 1.5);
+animationNodes.forEach((node) => animateLetters(node, 0.5));
+animateLetters(introDateNode, 1.5);
