@@ -1,9 +1,8 @@
 /**
  * Animate node text.
  * @param {Element} node
- * @param {Object} params
- * @param {number} params.delay
- * @param {number} params.interval
+ * @param {number} delay
+ * @param {number} interval
  */
 export default (node, delay = 0, interval = 0.05) => {
   const nodeText = node.textContent;
