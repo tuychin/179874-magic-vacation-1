@@ -1,3 +1,15 @@
+@keyframes show-pagination {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes roll-out-control {
+  to {
+    transform: translateX(0) rotate(0);
+  }
+}
+
 .slider {
   position: relative;
   flex-grow: 1;
@@ -148,6 +160,8 @@
   justify-content: space-between;
   width: 17rem;
   z-index: 1;
+  opacity: 0;
+  animation: show-pagination 0.7s ease 1.3s forwards;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -169,6 +183,20 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation-delay: 1.3s;
+  animation-fill-mode: forwards;
+
+  .active &--prev {
+    transform: translateX(-50px) rotate(-360deg);
+    animation-name: roll-out-control;
+  }
+
+  .active &--next {
+    transform: translateX(50px) rotate(360deg);
+    animation-name: roll-out-control;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -247,6 +275,8 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  opacity: 0;
+  animation: show-pagination 0.7s ease 1.3s forwards;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
