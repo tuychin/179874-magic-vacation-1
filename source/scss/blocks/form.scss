@@ -1,3 +1,19 @@
+@keyframes show-button {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    color: $c-dark;
+  }
+}
+
+@keyframes show-result-field {
+  to {
+    width: calc(100% - 31rem);
+    opacity: 1;
+  }
+}
+
 .form {
   position: relative;
   display: flex;
@@ -107,15 +123,6 @@
   opacity: 0;
   animation: show-button 1s ease 0.5s forwards;
 
-  @keyframes show-button {
-    50% {
-      opacity: 1;
-    }
-    100% {
-      color: $c-dark;
-    }
-  }
-
   @media (orientation: portrait) {
     position: relative;
     flex: none;
@@ -165,13 +172,6 @@
     width: 0;
     opacity: 0;
     animation: show-result-field 0.5s ease 1s forwards;
-
-    @keyframes show-result-field {
-      to {
-        width: calc(100% - 31rem);
-        opacity: 1;
-      }
-    }
 
     @media (min-width: $stop-scaling) {
       width: calc(100% - 310px);
