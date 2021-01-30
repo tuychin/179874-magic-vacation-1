@@ -37,3 +37,8 @@ const introDateNode = document.querySelector(`.intro__info .js-animate-letters`)
 
 animationNodes.forEach((node) => animateLetters(node, 0.5));
 animateLetters(introDateNode, 1.5);
+
+// header color on slider change
+document.body.addEventListener(`screenChanged`, ({detail}) => {
+  window.history.pushState(null, ``, `#${detail.screenName}`);
+});

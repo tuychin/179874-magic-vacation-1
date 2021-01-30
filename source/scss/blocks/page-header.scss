@@ -309,6 +309,22 @@
         right: auto;
         background-color: $c-purple;
         transition: width 0.3s, background-color 0.3s;
+
+        body.slide-2 & {
+          background-color: $c-light-blue;
+        }
+  
+        body.slide-3 & {
+          background-color: $c-dark-blue;
+        }
+      }
+
+      body.slide-2 & {
+        color: $c-light-blue;
+      }
+
+      body.slide-3 & {
+        color: $c-dark-blue;
       }
     }
   }
